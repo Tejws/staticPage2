@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Residential Land Activity Dashboard</title>
+    <title>Insurance Risk Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         body {
@@ -173,15 +173,15 @@
         }
         
         .donut-center-text {
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px; /* Larger font */
-    font-weight: bold;
-    color: #36454a;
-    opacity: 1; /* Make visible immediately */
-}
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px; /* Larger font */
+            font-weight: bold;
+            color: #36454a;
+            opacity: 1; /* Make visible immediately */
+        }
         
         .bar-chart-container {
             height: 120px;
@@ -270,28 +270,28 @@
 </head>
 <body>
     <div class="dashboard">
-        <!-- Card 1: Proposed Undeveloped Lots -->
+        <!-- Card 1: Active Policies -->
         <div class="card">
-            <div class="card-title">Proposed Undeveloped Lots Initial Development</div>
+            <div class="card-title">Active Insurance Policies</div>
             <div class="big-number">20,960</div>
             <div class="donut-chart-container">
                 <canvas id="donutChart"></canvas>
                 <div class="donut-center-text">16,248</div>
             </div>
-            <div class="subtitle">Developed Lots (Lots with Titles Issued)</div>
+            <div class="subtitle">Policies In Good Standing</div>
         </div>
         
-        <!-- Card 2: Residential Land Activity -->
+        <!-- Card 2: Policy Distribution -->
         <div class="card">
-            <div class="card-title">Residential Land Activity by Precinct</div>
+            <div class="card-title">Policy Distribution by Product Line</div>
             <div class="legend">
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #02c4b1;"></div>
-                    <span>Developed Lots</span>
+                    <span>In-Force Policies</span>
                 </div>
                 <div class="legend-item">
                     <div class="legend-color" style="background-color: #36454a;"></div>
-                    <span>Undeveloped Lots</span>
+                    <span>Lapsed Policies</span>
                 </div>
             </div>
             <div class="bar-chart-container" style="height: 190px;">
@@ -299,18 +299,18 @@
             </div>
         </div>
         
-        <!-- Card 3: Proposed Undeveloped Lots by Precinct -->
+        <!-- Card 3: Premium Distribution -->
         <div class="card pie-chart-card">
-            <div class="card-title">Proposed Undeveloped Lots by Precinct</div>
-            <div class="subtitle">Distribution of Proposed Undeveloped Lots Across the Shire</div>
+            <div class="card-title">Premium Distribution by Product Line</div>
+            <div class="subtitle">Percentage of Total Premium Volume</div>
             <div class="pie-chart-container">
                 <canvas id="pieChart"></canvas>
             </div>
         </div>
         
-        <!-- Card 4: Subdivision Lots Lodged -->
+        <!-- Card 4: New Claims Filed -->
         <div class="card">
-            <div class="card-title">Subdivision Lots Lodged</div>
+            <div class="card-title">New Claims Filed</div>
             <div class="subtitle">YTD Comparison with Last Year</div>
             <div class="percentage">66% <span class="arrow-up">↑</span></div>
             <div class="bar-chart-container">
@@ -318,9 +318,9 @@
             </div>
         </div>
         
-        <!-- Card 5: Subdivision Lots Issued SOC -->
+        <!-- Card 5: Claims Settled -->
         <div class="card">
-            <div class="card-title">Subdivision Lots Issued SOC</div>
+            <div class="card-title">Claims Settled</div>
             <div class="subtitle">YTD Comparison with Last Year</div>
             <div class="percentage">23% <span class="arrow-up">↑</span></div>
             <div class="bar-chart-container">
@@ -328,9 +328,9 @@
             </div>
         </div>
         
-        <!-- Card 6: Families Moving -->
+        <!-- Card 6: Customer Satisfaction -->
         <div class="card">
-            <div class="card-title">Families Moving to the Shire per Day</div>
+            <div class="card-title">Customer Satisfaction Rating</div>
             <div class="icon-container">
                 <svg class="icon happy-face" viewBox="0 0 100 100">
                     <circle cx="36" cy="40" r="15" fill="#FFD700" stroke="#36454a" stroke-width="1">
@@ -349,9 +349,9 @@
             </div>
         </div>
         
-        <!-- Card 7: New Families Moving -->
+        <!-- Card 7: New Policies Issued -->
         <div class="card">
-            <div class="card-title">New Families Moving to the Shire</div>
+            <div class="card-title">New Policies Issued</div>
             <div class="subtitle">YTD Comparison with Last Year</div>
             <div class="percentage">6% <span class="arrow-up">↑</span></div>
             <div class="bar-chart-container">
@@ -359,9 +359,9 @@
             </div>
         </div>
         
-        <!-- Card 8: Babies Born -->
+        <!-- Card 8: Policy Cancellations -->
         <div class="card">
-            <div class="card-title">Babies Born in the Shire</div>
+            <div class="card-title">Policy Cancellations</div>
             <div class="subtitle">YTD Comparison with Last Year</div>
             <div class="percentage">-8% <span class="arrow-down">↓</span></div>
             <div class="bar-chart-container">
@@ -369,17 +369,17 @@
             </div>
         </div>
         
-        <!-- Card 9: Subdivision Lots Lodged Monthly -->
+        <!-- Card 9: Monthly Claims Filed -->
         <div class="card">
-            <div class="card-title">Subdivision Lots Lodged</div>
+            <div class="card-title">Monthly Claims Filed</div>
             <div class="bar-chart-container">
                 <canvas id="monthlyLodged"></canvas>
             </div>
         </div>
         
-        <!-- Card 10: Subdivision Lots Issued SOC Monthly -->
+        <!-- Card 10: Monthly Claims Settled -->
         <div class="card">
-            <div class="card-title">Subdivision Lots issued SOC</div>
+            <div class="card-title">Monthly Claims Settled</div>
             <div class="bar-chart-container">
                 <canvas id="monthlyIssued"></canvas>
             </div>
@@ -387,26 +387,26 @@
         
         <!-- Card 11: Definitions -->
         <div class="card">
-            <div class="card-title">Definitions</div>
+            <div class="card-title">Key Metrics</div>
             <dl class="definition-list">
-                <dt>Lodged:</dt>
-                <dd>Lots in application for new subdivision stages</dd>
-                <dt>SOC:</dt>
-                <dd>Lots issued a Statement of Compliance and can now be titled</dd>
+                <dt>Loss Ratio:</dt>
+                <dd>Total claims paid divided by total premiums earned</dd>
+                <dt>Combined Ratio:</dt>
+                <dd>Sum of loss ratio and expense ratio, indicating overall profitability</dd>
             </dl>
         </div>
         
-        <!-- Card 12: New Families Monthly -->
+        <!-- Card 12: Monthly New Policies -->
         <div class="card">
-            <div class="card-title">New Families Moving to the Shire</div>
+            <div class="card-title">Monthly New Policies Issued</div>
             <div class="bar-chart-container">
                 <canvas id="monthlyFamilies"></canvas>
             </div>
         </div>
         
-        <!-- Card 13: Babies Born Monthly -->
+        <!-- Card 13: Monthly Cancellations -->
         <div class="card">
-            <div class="card-title">Babies born in the Shire</div>
+            <div class="card-title">Monthly Policy Cancellations</div>
             <div class="bar-chart-container">
                 <canvas id="monthlyBabies"></canvas>
             </div>
@@ -465,17 +465,17 @@
         const stackedBarChart = new Chart(stackedBarCtx, {
             type: 'bar',
             data: {
-                labels: ['Carolina Point Employment Precinct', 'Carolina Point Precinct', 'Northwest Precinct', 'East Precinct', 'Northern Precinct'],
+                labels: ['Auto Insurance', 'Home Insurance', 'Life Insurance', 'Health Insurance', 'Commercial'],
                 datasets: [
                     {
-                        label: 'Developed Lots',
-                        data: [219, 2674, 2886, 362, 674],
+                        label: 'In-Force Policies',
+                        data: [9219, 6674, 2886, 1362, 674],
                         backgroundColor: primaryColor,
                         barPercentage: 0.8
                     },
                     {
-                        label: 'Undeveloped Lots',
-                        data: [0, 1138, 3924, 2780, 0],
+                        label: 'Lapsed Policies',
+                        data: [1138, 924, 780, 630, 410],
                         backgroundColor: secondaryColor,
                         barPercentage: 0.8
                     }
@@ -500,9 +500,9 @@
                     y: {
                         stacked: true,
                         beginAtZero: true,
-                        max: 8000,
+                        max: 12000,
                         ticks: {
-                            stepSize: 2000
+                            stepSize: 3000
                         }
                     }
                 },
@@ -537,7 +537,7 @@
         const pieChart = new Chart(pieCtx, {
             type: 'pie',
             data: {
-                labels: ['Carolina Point Precinct', 'Northwest Precinct', 'East Precinct', 'Northern Precinct', 'Carolina Point Employment Precinct', 'Other Precinct'],
+                labels: ['Auto Insurance', 'Home Insurance', 'Life Insurance', 'Health Insurance', 'Commercial', 'Specialty'],
                 datasets: [{
                     data: [28, 35, 11, 8, 7, 11],
                     backgroundColor: [
